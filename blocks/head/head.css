@@ -98,10 +98,8 @@ table.grid td:last-child {
         height: 50px;
         line-height: 50px;
     }
-        .nb-search-button {
+        .button_size_l.button_arrowed,
+        .button_size_l.button_arrowed:active {
             vertical-align: middle;
-        }
-
-        .button_size_l.button_arrowed {
             margin-right: -3px;
         }
