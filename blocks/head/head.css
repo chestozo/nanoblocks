@@ -12,6 +12,27 @@ section {
 }
 
 /*****************************************************************************/
+/* Grid */
+table.grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+
+table.grid td {
+    border-right: 1px dotted rgba(255, 0, 255, 0.05);
+}
+
+table.grid td:last-child {
+    border-right: 0;
+}
+
+/*****************************************************************************/
 /* Header */
 .nb-head {
     padding: 2em;
@@ -21,41 +42,66 @@ section {
 /*****************************************************************************/
 /* Search arrow */
 .nb-search {
+    margin: 0 auto 0 0;
+    width: 80%;
     background: red;
-    width: 100%;
-    margin: 0 auto;
-
 }
 
+/* Arrow and button */
 .nb-search-arrow {
     float: right;
     width: 0;
     height: 0;
 
-    border: 30px solid red;
+    border: 25px solid red;
     border-top-color: #DDD;
     border-bottom-color: #DDD;
     border-right-width: 0;
-    -webkit-transform: scaleX(0.5);
+    -webkit-transform: scaleX(0.67);
 
-    margin-right: -22px;
+    margin-right: -21px;
 }
 
 .nb-search-content {
-    height: 100%;
-    line-height: 60px;
-    background: #EEE;
+    width: 100%;
 }
 
-.nb-search-input {
-    font-size: 16px;
-    vertical-align: middle;
-    margin-bottom: 3px;
-    margin-left: 10px;
-    margin-right: 3px;
-}
+    .nb-search-input-container {
+        position: relative;
 
-.nb-search-content .button {
-    vertical-align: middle;
-    text-align: center;
-}
+        width: 100%;
+
+        /*background: #EEE;*/
+        background: red;
+
+        height: 50px;
+        line-height: 50px;
+    }
+
+        .nb-search-input {
+            font-size: 16px;
+            vertical-align: middle;
+            width: 99%;
+            margin-bottom: 4px;
+            margin-left: 10px;
+        }
+
+    .nb-search-button-container {
+        float: right;
+        text-align: right;
+        /*background: yellow;*/
+        background: red;
+
+        width: 81px;
+        margin-right: -81px;
+
+        height: 50px;
+        line-height: 50px;
+    }
+        .nb-search-button {
+            vertical-align: middle;
+        }
+
+        .button_size_l.button_arrowed {
+            margin-right: -3px;
+        }
