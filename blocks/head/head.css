@@ -1,0 +1,61 @@
+/*****************************************************************************/
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    background: #DDD;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*****************************************************************************/
+/* Header */
+.nb-head {
+    padding: 2em;
+    background: #EEE;
+}
+
+/*****************************************************************************/
+/* Search arrow */
+.nb-search {
+    background: red;
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.nb-search-arrow {
+    float: right;
+    width: 0;
+    height: 0;
+
+    border: 30px solid red;
+    border-top-color: #DDD;
+    border-bottom-color: #DDD;
+    border-right-width: 0;
+    -webkit-transform: scaleX(0.5);
+
+    margin-right: -22px;
+}
+
+.nb-search-content {
+    height: 100%;
+    line-height: 60px;
+    background: #EEE;
+}
+
+.nb-search-input {
+    font-size: 16px;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
+.nb-search-content .button {
+    vertical-align: middle;
+    text-align: center;
+}
