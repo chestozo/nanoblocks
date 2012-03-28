@@ -7,8 +7,7 @@ body {
 }
 
 section {
-    width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
 }
 
 /*****************************************************************************/
@@ -33,71 +32,61 @@ table.grid td:last-child {
 }
 
 /*****************************************************************************/
-/* Header */
-.nb-head {
-    padding: 2em;
-    background: #EEE;
+/* Search version 2 */
+.search {
+    height: 50px;
+    background: url(http://fc01.deviantart.net/fs31/f/2008/229/c/3/LVU_pattern_by_loveshugah.jpg) repeat;
+    padding-right: 95px;
+    padding-left: 5px;
+    overflow: hidden; /* Почему-то иначе две подряд расположенные стрелы воздействуют друг на друга. То ли из-за height: 100% ниже, или из-за line-height ниже же. */
 }
 
-/*****************************************************************************/
-/* Search arrow */
-.nb-search {
-    margin: 0 auto 0 0;
-    width: 80%;
-    background: red;
-}
-
-/* Arrow and button */
-.nb-search-arrow {
-    float: right;
-    width: 0;
-    height: 0;
-
-    border: 25px solid red;
-    border-top-color: #DDD;
-    border-bottom-color: #DDD;
-    border-right-width: 0;
-    -webkit-transform: scaleX(0.67);
-
-    margin-right: -21px;
-}
-
-.nb-search-content {
-    width: 100%;
-}
-
-    .nb-search-input-container {
-        position: relative;
-
+    .search-main {
         width: 100%;
-
-        /*background: #EEE;*/
-        background: red;
-
-        height: 50px;
         line-height: 50px;
+        padding-right: 10px;
     }
 
-        .nb-search-input {
+        .search-input {
+            width: 100%;
             font-size: 16px;
-            vertical-align: middle;
-            width: 99%;
-            margin-bottom: 4px;
-            margin-left: 10px;
+            margin: 0;
         }
 
-    .nb-search-button-container {
+    .search-button {
         float: right;
-        text-align: right;
-        /*background: yellow;*/
-        background: red;
-
-        width: 81px;
-        margin-right: -81px;
-
-        height: 50px;
+        position: relative;
+        top: -50px;
+        left: 95px;
+        width: 85px;
+        height: 100%;
         line-height: 50px;
+        overflow: hidden;
     }
+
+        .search-arrow-top {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #DDD;
+            right: 0;
+            top: -25px;
+            -webkit-transform-origin: 100% 100%;
+            -webkit-transform: scaleX(0.67) rotate(45deg);
+        }
+
+        .search-arrow-bottom {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #DDD;
+            right: 0;
+            top: 25px;
+            -webkit-transform-origin: 100% 0;
+            -webkit-transform: scaleX(0.67) rotate(-45deg);
+        }
+
+        /* This fixes the #47 issue */
         .button_size_l.button_arrowed,
         .button_size_l.button_arrowed:active {
             vertical-align: middle;
