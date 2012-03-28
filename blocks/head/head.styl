@@ -1,0 +1,109 @@
+prefix = '' // TODO remove - we have global
+
+head ?= prefix + 'head'
+search ?= prefix + 'search'
+bgcolor = #DDD
+
+arrow-height = 50px
+input-margin = 5px
+right-button-width = 85px
+right-full-width = right-button-width + 2 * input-margin
+
+/*****************************************************************************/
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    background: bgcolor
+}
+
+section {
+    margin: 0 auto 2em auto;
+}
+
+/*****************************************************************************/
+/* Grid */
+table.grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+
+    td {
+        border-right: 1px dotted rgba(255, 0, 255, 0.05);
+        &:last-child {
+            border-right: 0;
+        }
+    }
+}
+
+/*****************************************************************************/
+/* Search version 2 */
+.{search} {
+    overflow: hidden; /* Почему-то иначе две подряд расположенные стрелы воздействуют друг на друга. То ли из-за height: 100% ниже, или из-за line-height ниже же. */
+
+    height: arrow-height
+    padding-right: right-full-width
+    padding-left: input-margin
+
+    background: url(http://fc01.deviantart.net/fs31/f/2008/229/c/3/LVU_pattern_by_loveshugah.jpg) repeat;
+    background: url(http://www.brandbuildsell.com/wp-content/uploads/2010/08/patterns_2-6-tumblr-background-images.jpg) repeat;
+
+    .{search}-main {
+        width: 100%;
+        line-height: arrow-height
+        padding-right: input-margin * 2
+
+        .{search}-input {
+            vertical-align: middle;
+            margin-top: 0;
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    .{search}-button {
+        float: right;
+        position: relative;
+        top: -(arrow-height)
+        left: right-full-width
+        width: right-button-width
+        height: 100%;
+        line-height: arrow-height
+        padding-top: 1px;
+
+        arrow-arm(up, cx, cy) {
+            dir = up ? -1 : 1
+
+            position: absolute;
+            right: 0;
+
+            width: arrow-height
+            height: arrow-height
+            background: bgcolor
+            top: (arrow-height / (2 * dir))
+            -webkit-transform-origin: cx cy
+            -webkit-transform: scaleX(0.67) rotate(-(dir * 45deg))
+        }
+
+        .{search}-arrow-top {
+            arrow-arm(true, 100%, 100%);
+        }
+
+        .{search}-arrow-bottom {
+            arrow-arm(false, 100%, 0);
+        }
+    }
+}
+
+/*****************************************************************************/
+/* This fixes the #47 issue */
+.button_size_l.button_arrowed,
+.button_size_l.button_arrowed:active {
+    vertical-align: middle;
+    margin-right: -3px;
+}

@@ -7,6 +7,11 @@ test-tools:
 	test -x "$(shell which uglifyjs)"
 	test -x "$(shell which csso)"
 
+%.css : %.styl
+	stylus < $*.styl > $*.raw.css
+	csso $*.raw.css $*.css
+	-rm $*.raw.css
+
 .PHONY: all test-tools
 
 # TODO: посмотреть на grunt
