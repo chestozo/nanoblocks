@@ -1,6 +1,6 @@
 # Sublime Text Project files
 *.sublime-workspace
-.idea/*
+.idea
 *.esproj
 .DS_Store
 tags
